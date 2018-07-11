@@ -46,6 +46,7 @@
                                         <state key="normal" image="addGoal"/>
                                         <connections>
                                             <action selector="btnHedefEkleBasildi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rtf-Wi-eeO"/>
+                                            <segue destination="Xjq-Qo-pSj" kind="show" id="znW-CX-mqa"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -182,8 +183,149 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
+        <!--Hedef EkleVC-->
+        <scene sceneID="LUh-AJ-QB1">
+            <objects>
+                <viewController id="Xjq-Qo-pSj" customClass="HedefEkleVC" customModule="HedefiniBelirle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i9Z-Lf-pES">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHJ-XR-QDa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78r-2Z-W7b">
+                                        <rect key="frame" x="111.5" y="33" width="152" height="25"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEDEFİNİ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3w-yI-ePY">
+                                                <rect key="frame" x="0.0" y="0.0" width="81.5" height="25"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BELİRLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91A-Kz-cit">
+                                                <rect key="frame" x="81.5" y="0.0" width="70.5" height="25"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="u3w-yI-ePY" firstAttribute="centerY" secondItem="78r-2Z-W7b" secondAttribute="centerY" id="6sj-wS-JpQ"/>
+                                            <constraint firstItem="91A-Kz-cit" firstAttribute="centerY" secondItem="78r-2Z-W7b" secondAttribute="centerY" id="bGH-Y5-jEc"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K00-sL-L2L">
+                                        <rect key="frame" x="15" y="33" width="14" height="25"/>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="btnGeriBasildi:" destination="Xjq-Qo-pSj" eventType="touchUpInside" id="H3a-b1-Wy7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.42745098040000001" green="0.73725490199999999" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="K00-sL-L2L" firstAttribute="leading" secondItem="NHJ-XR-QDa" secondAttribute="leading" constant="15" id="5jL-Bx-qh0"/>
+                                    <constraint firstItem="K00-sL-L2L" firstAttribute="centerY" secondItem="78r-2Z-W7b" secondAttribute="centerY" id="9gA-tD-ttk"/>
+                                    <constraint firstAttribute="bottom" secondItem="78r-2Z-W7b" secondAttribute="bottom" constant="12" id="GdM-OU-zoL"/>
+                                    <constraint firstItem="78r-2Z-W7b" firstAttribute="centerX" secondItem="NHJ-XR-QDa" secondAttribute="centerX" id="Hp2-qZ-Ue5"/>
+                                    <constraint firstAttribute="height" constant="70" id="s7J-zG-nfL"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UAD-na-NEI">
+                                <rect key="frame" x="20" y="90" width="335" height="260"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hedefiniz nedir?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BEm-IT-UpS">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="170.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hedef Tipi:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNX-dQ-LVe">
+                                        <rect key="frame" x="0.0" y="180.5" width="335" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kMj-Um-JeC">
+                                        <rect key="frame" x="0.0" y="210" width="335" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfi-w2-8OG">
+                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="50"/>
+                                                <color key="backgroundColor" red="0.42745098040000001" green="0.73725490199999999" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="vuP-68-edC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                                <state key="normal" title="Kısa Süreli">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnKisaSureliBasildi:" destination="Xjq-Qo-pSj" eventType="touchUpInside" id="32Q-UL-udL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWi-ed-XIa">
+                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="50"/>
+                                                <color key="backgroundColor" red="0.69803921568627447" green="0.8666666666666667" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                                <state key="normal" title="Uzun Süreli">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnUzunSureliBasildi:" destination="Xjq-Qo-pSj" eventType="touchUpInside" id="fcZ-bT-4gc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="spq-SX-4U7"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMP-P0-hyv">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.66274509803921566" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TI9-Mf-EC7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="İlerle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnIlerleBasildi:" destination="Xjq-Qo-pSj" eventType="touchUpInside" id="oUn-GL-UDQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BIE-0n-zjj" firstAttribute="trailing" secondItem="UAD-na-NEI" secondAttribute="trailing" constant="20" id="0ZB-wa-yfs"/>
+                            <constraint firstItem="BIE-0n-zjj" firstAttribute="bottom" secondItem="CMP-P0-hyv" secondAttribute="bottom" id="ZKK-W8-yBx"/>
+                            <constraint firstItem="UAD-na-NEI" firstAttribute="top" secondItem="NHJ-XR-QDa" secondAttribute="bottom" constant="20" id="a2B-5o-IeY"/>
+                            <constraint firstItem="UAD-na-NEI" firstAttribute="leading" secondItem="BIE-0n-zjj" secondAttribute="leading" constant="20" id="cZS-gi-tGN"/>
+                            <constraint firstItem="BIE-0n-zjj" firstAttribute="trailing" secondItem="NHJ-XR-QDa" secondAttribute="trailing" id="ma1-cJ-Azf"/>
+                            <constraint firstItem="CMP-P0-hyv" firstAttribute="leading" secondItem="BIE-0n-zjj" secondAttribute="leading" id="qP1-cN-p7z"/>
+                            <constraint firstItem="NHJ-XR-QDa" firstAttribute="leading" secondItem="i9Z-Lf-pES" secondAttribute="leading" id="qUg-zt-Vcg"/>
+                            <constraint firstItem="NHJ-XR-QDa" firstAttribute="top" secondItem="i9Z-Lf-pES" secondAttribute="top" id="v5q-dP-LuZ"/>
+                            <constraint firstItem="BIE-0n-zjj" firstAttribute="trailing" secondItem="CMP-P0-hyv" secondAttribute="trailing" id="wWb-pV-cb9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BIE-0n-zjj"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnİlerle" destination="CMP-P0-hyv" id="BSK-fc-9GY"/>
+                        <outlet property="btnKisaSureli" destination="Tfi-w2-8OG" id="sCd-kj-sqb"/>
+                        <outlet property="btnUzunSureli" destination="YWi-ed-XIa" id="pNb-na-UWr"/>
+                        <outlet property="txaHedef" destination="BEm-IT-UpS" id="Wns-nw-0yT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6eK-cg-VhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="864.79999999999995" y="133.5832083958021"/>
+        </scene>
     </scenes>
     <resources>
         <image name="addGoal" width="35" height="32"/>
+        <image name="back" width="14" height="25"/>
     </resources>
 </document>
