@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData;
 
 class HedefVC: UIViewController {
 
@@ -14,6 +15,8 @@ class HedefVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let hedefVeri=Hedef();
+        
     }
 
     @IBAction func btnHedefEkleBasildi(_ sender: Any) {
