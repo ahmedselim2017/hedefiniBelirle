@@ -13,6 +13,7 @@
 		936E361F20F66FF000D10A3C /* HedefiniBelirle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 936E361D20F66FF000D10A3C /* HedefiniBelirle.xcdatamodeld */; };
 		936E362120F66FF700D10A3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 936E362020F66FF700D10A3C /* Assets.xcassets */; };
 		936E362420F66FF700D10A3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936E362220F66FF700D10A3C /* LaunchScreen.storyboard */; };
+		938349A020F697A400D871F8 /* HedefHucresi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9383499F20F697A400D871F8 /* HedefHucresi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		936E362020F66FF700D10A3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		936E362320F66FF700D10A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		936E362520F66FF700D10A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9383499F20F697A400D871F8 /* HedefHucresi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HedefHucresi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		936E362C20F6701F00D10A3C /* Gorunumler */ = {
 			isa = PBXGroup;
 			children = (
+				9383499F20F697A400D871F8 /* HedefHucresi.swift */,
 			);
 			path = Gorunumler;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				938349A020F697A400D871F8 /* HedefHucresi.swift in Sources */,
 				936E361920F66FF000D10A3C /* HedefVC.swift in Sources */,
 				936E361720F66FF000D10A3C /* AppDelegate.swift in Sources */,
 				936E361F20F66FF000D10A3C /* HedefiniBelirle.xcdatamodeld in Sources */,
