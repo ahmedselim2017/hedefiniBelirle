@@ -14,8 +14,9 @@ class HedefVC: UIViewController {
     @IBOutlet weak var tabloGoruntuleyici: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let hedefVeri=Hedef();
+        tabloGoruntuleyici.delegate=self;
+        tabloGoruntuleyici.dataSource=self;
+        tabloGoruntuleyici.isHidden=false;
         
     }
 
@@ -25,3 +26,17 @@ class HedefVC: UIViewController {
     
 }
 
+extension HedefVC:UITableViewDelegate,UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1;
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3;
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let hucre=tableView.dequeueReusableCell(withIdentifier: "hedefHucresi") as? HedefHucresi else{return UITableViewCell()}
+        print("sksnd");
+        hucre.hucreleriAyara(hedef: "Uygulamayı Bitir", tip: HedefTipi.kisaSureli , hedefDurum: 0);
+        return hucre;
+    }
+}

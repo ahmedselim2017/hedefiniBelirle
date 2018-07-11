@@ -15,9 +15,9 @@ class HedefHucresi: UITableViewCell {
     @IBOutlet weak var lblHedefDurum: UILabel!
     
     
-    func hucreleriAyara(hedef:String,tip:String,hedefDurum:Int){
+    func hucreleriAyara(hedef:String,tip:HedefTipi,hedefDurum:Int){
         self.lblHedef.text=hedef;
-        self.lblTip.text=tip;
+        self.lblTip.text=tip.rawValue;
         self.lblHedefDurum.text=String(hedefDurum);
     }
     
