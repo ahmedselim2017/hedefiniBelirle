@@ -21,7 +21,8 @@ class HedefVC: UIViewController {
     }
 
     @IBAction func btnHedefEkleBasildi(_ sender: Any) {
-        print("hedef ekle");
+        guard let hedefEkleVC=storyboard?.instantiateViewController(withIdentifier: "HedefEkleVC") as? HedefEkleVC else {return;}
+        presentDetail(hedefEkleVC);
     }
     
 }
@@ -35,7 +36,7 @@ extension HedefVC:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let hucre=tableView.dequeueReusableCell(withIdentifier: "hedefHucresi") as? HedefHucresi else{return UITableViewCell()}
-        print("sksnd");
+        
         hucre.hucreleriAyara(hedef: "Uygulamayı Bitir", tip: HedefTipi.kisaSureli , hedefDurum: 0);
         return hucre;
     }

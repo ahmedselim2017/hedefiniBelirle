@@ -16,6 +16,7 @@
 		938349A020F697A400D871F8 /* HedefHucresi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9383499F20F697A400D871F8 /* HedefHucresi.swift */; };
 		938349A220F6AC4700D871F8 /* HedefTipi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938349A120F6AC4700D871F8 /* HedefTipi.swift */; };
 		938349A420F6B90500D871F8 /* HedefEkleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938349A320F6B90500D871F8 /* HedefEkleVC.swift */; };
+		938349A620F6BA7500D871F8 /* UIViewControllerEkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938349A520F6BA7500D871F8 /* UIViewControllerEkl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9383499F20F697A400D871F8 /* HedefHucresi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HedefHucresi.swift; sourceTree = "<group>"; };
 		938349A120F6AC4700D871F8 /* HedefTipi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HedefTipi.swift; sourceTree = "<group>"; };
 		938349A320F6B90500D871F8 /* HedefEkleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HedefEkleVC.swift; sourceTree = "<group>"; };
+		938349A520F6BA7500D871F8 /* UIViewControllerEkl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerEkl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		936E362E20F6703F00D10A3C /* Eklentiler */ = {
 			isa = PBXGroup;
 			children = (
+				938349A520F6BA7500D871F8 /* UIViewControllerEkl.swift */,
 			);
 			path = Eklentiler;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				938349A620F6BA7500D871F8 /* UIViewControllerEkl.swift in Sources */,
 				938349A020F697A400D871F8 /* HedefHucresi.swift in Sources */,
 				936E361920F66FF000D10A3C /* HedefVC.swift in Sources */,
 				936E361720F66FF000D10A3C /* AppDelegate.swift in Sources */,

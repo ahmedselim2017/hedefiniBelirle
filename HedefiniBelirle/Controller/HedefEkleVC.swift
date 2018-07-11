@@ -27,7 +27,8 @@ class HedefEkleVC: UIViewController {
     @IBAction func btnIlerleBasildi(_ sender: Any) {
     }
     @IBAction func btnGeriBasildi(_ sender: Any) {
-        dismiss(animated: true, completion: nil);
+        guard let hedefVC=storyboard?.instantiateViewController(withIdentifier: "HedefVC") as? HedefVC else {return;}
+        dismissDetail();
     }
     
     /*
