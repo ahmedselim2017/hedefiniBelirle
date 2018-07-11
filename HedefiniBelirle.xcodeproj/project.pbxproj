@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		936E361720F66FF000D10A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936E361620F66FF000D10A3C /* AppDelegate.swift */; };
-		936E361920F66FF000D10A3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936E361820F66FF000D10A3C /* ViewController.swift */; };
+		936E361920F66FF000D10A3C /* HedefVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936E361820F66FF000D10A3C /* HedefVC.swift */; };
 		936E361C20F66FF000D10A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936E361A20F66FF000D10A3C /* Main.storyboard */; };
 		936E361F20F66FF000D10A3C /* HedefiniBelirle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 936E361D20F66FF000D10A3C /* HedefiniBelirle.xcdatamodeld */; };
 		936E362120F66FF700D10A3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 936E362020F66FF700D10A3C /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		936E361320F66FF000D10A3C /* HedefiniBelirle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HedefiniBelirle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		936E361620F66FF000D10A3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		936E361820F66FF000D10A3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		936E361820F66FF000D10A3C /* HedefVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HedefVC.swift; sourceTree = "<group>"; };
 		936E361B20F66FF000D10A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		936E361E20F66FF000D10A3C /* HedefiniBelirle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HedefiniBelirle.xcdatamodel; sourceTree = "<group>"; };
 		936E362020F66FF700D10A3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,7 +61,6 @@
 				936E362C20F6701F00D10A3C /* Gorunumler */,
 				936E362B20F6701500D10A3C /* Controller */,
 				936E361620F66FF000D10A3C /* AppDelegate.swift */,
-				936E361820F66FF000D10A3C /* ViewController.swift */,
 				936E361A20F66FF000D10A3C /* Main.storyboard */,
 				936E362020F66FF700D10A3C /* Assets.xcassets */,
 				936E362220F66FF700D10A3C /* LaunchScreen.storyboard */,
@@ -74,6 +73,7 @@
 		936E362B20F6701500D10A3C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				936E361820F66FF000D10A3C /* HedefVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				936E361920F66FF000D10A3C /* ViewController.swift in Sources */,
+				936E361920F66FF000D10A3C /* HedefVC.swift in Sources */,
 				936E361720F66FF000D10A3C /* AppDelegate.swift in Sources */,
 				936E361F20F66FF000D10A3C /* HedefiniBelirle.xcdatamodeld in Sources */,
 			);
