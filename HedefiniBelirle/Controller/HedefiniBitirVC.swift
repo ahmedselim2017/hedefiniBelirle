@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import CoreData;
+
+let appDelegete=UIApplication.shared.delegate as? AppDelegate;
 
 class HedefiniBitirVC: UIViewController ,UITextFieldDelegate {
 
@@ -29,6 +32,40 @@ class HedefiniBitirVC: UIViewController ,UITextFieldDelegate {
     }
     
     @IBAction func btnHedefEkleBasildi(_ sender: Any) {
+        if txtHedefSayi.text != nil{
+            kaydet { (sonuc) in
+                if sonuc{
+                    dismiss(animated: true, completion: nil);
+                    
+                }
+            }
+            
+        }
+    }
+    
+    @IBAction func btnGeriBasildi(_ sender: Any) {
+        dismissDetail();
+        
+    }
+    
+    func kaydet(bitis:(_ sonuc:Bool)->()){
+        guard let yonetilenDurum=appDelegete?.persistentContainer.viewContext else {return;}
+        let hedef=Hedef(context: yonetilenDurum);
+        
+        hedef.hedef=self.hedef;
+        hedef.tip=self.tip.rawValue;
+        hedef.hedefBitirmeSayisi=Int32(self.txtHedefSayi.text!)!;
+        hedef.hedefDurum=Int32(0);
+        
+        do{
+            try yonetilenDurum.save();
+            bitis(true);
+            debugPrint("Kaydetme Başarılı");
+        }
+        catch{
+            debugPrint("57. Satır Hata \(error.localizedDescription)");
+            bitis(false);
+        }
     }
     
     /*
