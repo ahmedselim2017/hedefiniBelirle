@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HedefEkleVC: UIViewController {
+class HedefEkleVC: UIViewController ,UITextViewDelegate{
 
     @IBOutlet weak var txaHedef: UITextView!
     @IBOutlet weak var btnKisaSureli: UIButton!
@@ -22,6 +22,7 @@ class HedefEkleVC: UIViewController {
         klavyeyiKapatmaEkle();
         btnKisaSureli.secilmisRenkAyarla();
         btnUzunSureli.secilmemisRenkAyarla();
+        txaHedef.delegate=self;
         // Do any additional setup after loading the view.
     }
     
@@ -37,9 +38,14 @@ class HedefEkleVC: UIViewController {
 
     }
     @IBAction func btnIlerleBasildi(_ sender: Any) {
+        if txaHedef.text != "" && txaHedef.text != "Hedefiniz nedir?"{
+            guard let hedefiniBitirVC=storyboard?.instantiateViewController(withIdentifier: "hedefiniBitir") as? HedefiniBitirVC else {return;}
+            hedefiniBitirVC.initVeri(hedef: txaHedef.text!, tip: hedefTipi);
+            presentDetail(hedefiniBitirVC);
+        }
     }
     @IBAction func btnGeriBasildi(_ sender: Any) {
-        guard let hedefVC=storyboard?.instantiateViewController(withIdentifier: "HedefVC") as? HedefVC else {return;}
+       
         dismissDetail();
     }
     
@@ -51,6 +57,12 @@ class HedefEkleVC: UIViewController {
     
     @objc func klavyeKapat(_ dokunma:UITapGestureRecognizer){
         self.view.endEditing(true);
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        txaHedef.text="";
+        txaHedef.textColor=#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1);
+        
     }
     
     /*

@@ -19,6 +19,7 @@
 		938349A620F6BA7500D871F8 /* UIViewControllerEkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938349A520F6BA7500D871F8 /* UIViewControllerEkl.swift */; };
 		938349A820F6BF7300D871F8 /* UIViewEkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938349A720F6BF7300D871F8 /* UIViewEkl.swift */; };
 		938349AA20F7AB0800D871F8 /* UIButtonEkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938349A920F7AB0800D871F8 /* UIButtonEkl.swift */; };
+		938349AC20F7B0F800D871F8 /* HedefiniBitirVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938349AB20F7B0F800D871F8 /* HedefiniBitirVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		938349A520F6BA7500D871F8 /* UIViewControllerEkl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerEkl.swift; sourceTree = "<group>"; };
 		938349A720F6BF7300D871F8 /* UIViewEkl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewEkl.swift; sourceTree = "<group>"; };
 		938349A920F7AB0800D871F8 /* UIButtonEkl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonEkl.swift; sourceTree = "<group>"; };
+		938349AB20F7B0F800D871F8 /* HedefiniBitirVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HedefiniBitirVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			children = (
 				936E361820F66FF000D10A3C /* HedefVC.swift */,
 				938349A320F6B90500D871F8 /* HedefEkleVC.swift */,
+				938349AB20F7B0F800D871F8 /* HedefiniBitirVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				938349A020F697A400D871F8 /* HedefHucresi.swift in Sources */,
 				936E361920F66FF000D10A3C /* HedefVC.swift in Sources */,
 				936E361720F66FF000D10A3C /* AppDelegate.swift in Sources */,
+				938349AC20F7B0F800D871F8 /* HedefiniBitirVC.swift in Sources */,
 				936E361F20F66FF000D10A3C /* HedefiniBelirle.xcdatamodeld in Sources */,
 				938349A420F6B90500D871F8 /* HedefEkleVC.swift in Sources */,
 				938349A220F6AC4700D871F8 /* HedefTipi.swift in Sources */,
