@@ -312,7 +312,7 @@
                         <viewLayoutGuide key="safeArea" id="BIE-0n-zjj"/>
                     </view>
                     <connections>
-                        <outlet property="btnİlerle" destination="CMP-P0-hyv" id="BSK-fc-9GY"/>
+                        <outlet property="btnIlerle" destination="CMP-P0-hyv" id="zrK-ol-PHZ"/>
                         <outlet property="btnKisaSureli" destination="Tfi-w2-8OG" id="sCd-kj-sqb"/>
                         <outlet property="btnUzunSureli" destination="YWi-ed-XIa" id="pNb-na-UWr"/>
                         <outlet property="txaHedef" destination="BEm-IT-UpS" id="Wns-nw-0yT"/>
