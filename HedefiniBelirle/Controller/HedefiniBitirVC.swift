@@ -16,6 +16,8 @@ class HedefiniBitirVC: UIViewController ,UITextFieldDelegate {
     @IBOutlet weak var btnHedefEkle: UIButton!
     @IBOutlet weak var txtHedefSayi: UITextField!
     
+    
+    
     var hedef:String!;
     var tip:HedefTipi!;
     override func viewDidLoad() {
@@ -35,8 +37,8 @@ class HedefiniBitirVC: UIViewController ,UITextFieldDelegate {
         if txtHedefSayi.text != nil{
             kaydet { (sonuc) in
                 if sonuc{
-                    dismiss(animated: true, completion: nil);
-                    
+                    guard let hedefVC=storyboard?.instantiateViewController(withIdentifier: "HedefVC") as? HedefVC else{return;}
+                    dismissDetailEnBasa(hedefVC);
                 }
             }
             
@@ -44,7 +46,8 @@ class HedefiniBitirVC: UIViewController ,UITextFieldDelegate {
     }
     
     @IBAction func btnGeriBasildi(_ sender: Any) {
-        dismissDetail();
+        guard let hedefVC=storyboard?.instantiateViewController(withIdentifier: "HedefVC") as? HedefVC else{return;}
+        dismissDetailEnBasa(hedefVC);
         
     }
     

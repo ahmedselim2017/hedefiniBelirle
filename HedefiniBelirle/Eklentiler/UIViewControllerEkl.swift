@@ -28,4 +28,14 @@ extension UIViewController{
         dismiss(animated: false, completion: nil);
     }
     
+    func dismissDetailEnBasa(_ viewControllerToPresent:UIViewController){
+        let gecis=CATransition();
+        gecis.duration=0.25;
+        gecis.type = CATransitionType.push;
+        gecis.subtype=CATransitionSubtype.fromLeft;
+        self.view.window?.layer.add(gecis,forKey: kCATransition);
+        present(viewControllerToPresent, animated: false, completion: nil);
+    }
+    
+    
 }
