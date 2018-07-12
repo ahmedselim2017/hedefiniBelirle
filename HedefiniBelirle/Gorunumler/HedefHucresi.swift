@@ -14,11 +14,18 @@ class HedefHucresi: UITableViewCell {
     @IBOutlet weak var lblTip: UILabel!
     @IBOutlet weak var lblHedefDurum: UILabel!
     
+    @IBOutlet weak var viewBitis: UIView!
     
     func hucreleriAyara(hedef:Hedef){
         self.lblHedef.text=hedef.hedef;
         self.lblTip.text=hedef.tip;
         self.lblHedefDurum.text=String(hedef.hedefDurum);
+        if hedef.hedefDurum==hedef.hedefBitirmeSayisi{
+            self.viewBitis.isHidden=false;
+        }
+        else{
+            self.viewBitis.isHidden=true;
+        }
     }
     
 }

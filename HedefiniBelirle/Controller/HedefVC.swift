@@ -89,14 +89,44 @@ extension HedefVC:UITableViewDelegate,UITableViewDataSource{
             })
         }
         
+        let ekleme=UITableViewRowAction(style: .normal , title: "1 EKLE") { (sira, indexPath) in
+            self.ayarla(indeks: indexPath);
+            tableView.reloadRows(at: [indexPath], with: .automatic);
+            
+        }
+        
+        ekleme.backgroundColor=#colorLiteral(red: 0.9385011792, green: 0.7164435983, blue: 0.3331357837, alpha: 1);
         silme.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1);
         
-        return [silme];
+        return [silme,ekleme];
         
     }
+    
+    
 }
 
 extension HedefVC{
+    
+    func ayarla(indeks:IndexPath){
+        guard let yonetilenDurum=appDelegete?.persistentContainer.viewContext else {return;}
+        let secilmisHedef=hedefler[indeks.row];
+        
+        if secilmisHedef.hedefDurum<secilmisHedef.hedefBitirmeSayisi{
+            secilmisHedef.hedefDurum=secilmisHedef.hedefDurum+1;
+        }
+        else{
+            return;
+        }
+        
+        do{
+            try yonetilenDurum.save();
+            print("Ayarlama Basarılı");
+        }
+        catch{
+            debugPrint("Hata 116. satır \(error.localizedDescription)")
+        }
+    }
+    
     func getir(bitis:(_ sonuc:Bool)->()){
         guard let yonetilenDurum=appDelegete?.persistentContainer.viewContext else {return;}
         
