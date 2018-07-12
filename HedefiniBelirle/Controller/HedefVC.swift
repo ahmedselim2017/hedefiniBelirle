@@ -9,9 +9,11 @@
 import UIKit
 import CoreData;
 
-class HedefVC: UIViewController {
+class HedefVC: UIViewController ,UIGestureRecognizerDelegate{
 
+    @IBOutlet weak var viewGeriAl: UIView!
     var hedefler:[Hedef]=[];
+    var silinenIndeks:IndexPath!;
     @IBOutlet weak var tabloGoruntuleyici: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,33 @@ class HedefVC: UIViewController {
         
     }
 
+    
+    
+    func viewGeriAlAnimasyon(){
+        self.viewGeriAl.alpha=0;
+        UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
+            self.viewGeriAl.isHidden=false;
+            self.viewGeriAl.alpha=1;
+
+        }, completion: { _ in
+            
+        })
+        self.loadViewIfNeeded();
+    }
+    
+    func viewGeriAlTersAnimasyon(){
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: [], animations: {
+            self.viewGeriAl.alpha = 0
+            
+        }, completion: { _ in
+            self.viewGeriAl.isHidden=true;
+            
+        })
+        self.loadViewIfNeeded();
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
         coreDataGetir();
@@ -40,6 +69,22 @@ class HedefVC: UIViewController {
                 
             }
         }
+    }
+    @IBAction func btnSilBasildi(_ sender: Any) {
+        self.kaldir(indeks: silinenIndeks, bitis: { (durum) in
+            if durum{
+                self.coreDataGetir();
+                tabloGoruntuleyici.deleteRows(at: [silinenIndeks], with: .automatic);
+            }
+            else{
+                debugPrint("86. Satır Hata")
+            }
+        })
+        viewGeriAlTersAnimasyon();
+    }
+    
+    @IBAction func btnGeriAlBasildi(_ sender: Any) {
+        viewGeriAlTersAnimasyon();
     }
     
     @IBAction func btnHedefEkleBasildi(_ sender: Any) {
@@ -76,17 +121,15 @@ extension HedefVC:UITableViewDelegate,UITableViewDataSource{
         return UITableViewCell.EditingStyle.none;
     }
     
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let silme=UITableViewRowAction(style: .destructive , title: "SİL") { (sira, indexPath) in
-            self.kaldir(indeks: indexPath, bitis: { (durum) in
-                if durum{
-                    self.coreDataGetir();
-                    tableView.deleteRows(at: [indexPath], with: .automatic);
-                }
-                else{
-                    debugPrint("86. Satır Hata")
-                }
-            })
+            
+            self.silinenIndeks=indexPath;
+            
+            self.viewGeriAlAnimasyon();
+            
+            
         }
         
         let ekleme=UITableViewRowAction(style: .normal , title: "1 EKLE") { (sira, indexPath) in

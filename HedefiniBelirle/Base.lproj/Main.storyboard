@@ -181,6 +181,42 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sih-2c-7Di">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="160" translatesAutoresizingMaskIntoConstraints="NO" id="LB8-Tp-pOj">
+                                        <rect key="frame" x="64" y="7" width="247" height="36"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hi5-ky-V2s">
+                                                <rect key="frame" x="0.0" y="0.0" width="57" height="36"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                                <state key="normal" title="Geri Al">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnGeriAlBasildi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hK4-lj-OM0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7M-hA-mEL">
+                                                <rect key="frame" x="217" y="0.0" width="30" height="36"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                                <state key="normal" title="Sil">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnSilBasildi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qGf-d1-0c8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="LB8-Tp-pOj" firstAttribute="centerY" secondItem="sih-2c-7Di" secondAttribute="centerY" id="7hB-OG-iYG"/>
+                                    <constraint firstAttribute="height" constant="50" id="FDX-JI-uU4"/>
+                                    <constraint firstItem="LB8-Tp-pOj" firstAttribute="centerX" secondItem="sih-2c-7Di" secondAttribute="centerX" id="cBP-7G-Vpa"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -188,9 +224,12 @@
                             <constraint firstItem="kOf-tw-q5y" firstAttribute="top" secondItem="FGv-qg-chj" secondAttribute="bottom" id="95t-UK-WvD"/>
                             <constraint firstItem="FGv-qg-chj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AY7-dB-zhf"/>
                             <constraint firstAttribute="trailing" secondItem="FGv-qg-chj" secondAttribute="trailing" id="C8K-ul-1Y8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sih-2c-7Di" secondAttribute="bottom" id="Hj6-uL-gXD"/>
                             <constraint firstItem="kOf-tw-q5y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R5b-pM-RDc"/>
                             <constraint firstItem="kdj-qk-7ss" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ST7-kO-Nuo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sih-2c-7Di" secondAttribute="trailing" id="Se5-0R-jaV"/>
                             <constraint firstItem="kdj-qk-7ss" firstAttribute="top" secondItem="FGv-qg-chj" secondAttribute="bottom" constant="75" id="ZPV-dy-BCI"/>
+                            <constraint firstItem="sih-2c-7Di" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="idb-AJ-iVr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kOf-tw-q5y" secondAttribute="trailing" id="nW5-fr-WuC"/>
                             <constraint firstItem="kOf-tw-q5y" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="v0b-3j-Xa0"/>
                         </constraints>
@@ -198,6 +237,7 @@
                     </view>
                     <connections>
                         <outlet property="tabloGoruntuleyici" destination="kOf-tw-q5y" id="cEO-4V-gQH"/>
+                        <outlet property="viewGeriAl" destination="sih-2c-7Di" id="RL6-8a-wJn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
