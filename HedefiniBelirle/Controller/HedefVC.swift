@@ -22,6 +22,13 @@ class HedefVC: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
+        coreDataGetir();
+        tabloGoruntuleyici.reloadData();
+
+    }
+    
+    func coreDataGetir(){
         self.getir { (durum) in
             if durum{
                 if hedefler.count>=1 {
@@ -33,8 +40,6 @@ class HedefVC: UIViewController {
                 
             }
         }
-        tabloGoruntuleyici.reloadData();
-
     }
     
     @IBAction func btnHedefEkleBasildi(_ sender: Any) {
@@ -48,9 +53,11 @@ extension HedefVC:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return hedefler.count;
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let hucre=tableView.dequeueReusableCell(withIdentifier: "hedefHucresi") as? HedefHucresi else{return UITableViewCell()}
         
@@ -59,6 +66,33 @@ extension HedefVC:UITableViewDelegate,UITableViewDataSource{
         
         hucre.hucreleriAyara(hedef: hedef);
         return hucre;
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true;
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle.none;
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let silme=UITableViewRowAction(style: .destructive , title: "SİL") { (sira, indexPath) in
+            self.kaldir(indeks: indexPath, bitis: { (durum) in
+                if durum{
+                    self.coreDataGetir();
+                    tableView.deleteRows(at: [indexPath], with: .automatic);
+                }
+                else{
+                    debugPrint("86. Satır Hata")
+                }
+            })
+        }
+        
+        silme.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1);
+        
+        return [silme];
+        
     }
 }
 
@@ -78,4 +112,20 @@ extension HedefVC{
             bitis(false);
         }
     }
+    
+    func kaldir(indeks:IndexPath,bitis:(_ sonuc:Bool)->()){
+        guard let yonetilenDurum = appDelegete?.persistentContainer.viewContext else {return;}
+        yonetilenDurum.delete(hedefler[indeks.row]);
+        
+        do{
+            try yonetilenDurum.save();
+            debugPrint("Silme Başarılı");
+            bitis(true);
+        }
+        catch{
+            debugPrint("Hata 91. Satır \(error.localizedDescription)");
+            bitis(false);
+        }
+    }
+    
 }
