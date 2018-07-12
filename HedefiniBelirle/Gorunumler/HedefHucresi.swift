@@ -15,10 +15,10 @@ class HedefHucresi: UITableViewCell {
     @IBOutlet weak var lblHedefDurum: UILabel!
     
     
-    func hucreleriAyara(hedef:String,tip:HedefTipi,hedefDurum:Int){
-        self.lblHedef.text=hedef;
-        self.lblTip.text=tip.rawValue;
-        self.lblHedefDurum.text=String(hedefDurum);
+    func hucreleriAyara(hedef:Hedef){
+        self.lblHedef.text=hedef.hedef;
+        self.lblTip.text=hedef.tip;
+        self.lblHedefDurum.text=String(hedef.hedefDurum);
     }
     
 }
